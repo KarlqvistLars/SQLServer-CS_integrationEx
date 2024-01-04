@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>84</x>
+      <y>186</y>
+      <w>180</w>
+      <h>420</h>
+    </coordinates>
+    <panel_attributes>*Dashboard*
+Package::FormUI
+{Some Properties}
+--
+ListBox peopleFoundListbox;
+
+Label lastNameLabel;
+TextBox lastNameText;
+
+Button searchButton;
+
+Label firstNameInsLabel;
+TextBox firstNameInsText;
+
+Label lastNameInsLabel;
+TextBox lastNameInsText;
+
+Label emailAddressInsLabel;
+TextBox emailAddressInsText;
+
+Label phoneInsLabel;
+TextBox phoneInsText;
+
+Button insertRecordButton;
+Button showAllButton;
+Button editButton;
+Button deleteButton;
+
+TextBox testTextBox;
+
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>186</y>
+      <w>204</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>*DataAccess*
+Package::FormUI
+{Some Properties}
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+GetPeople(string):List&lt;Person&gt;
+InsertPErson(string, string, string, string):void
+ShowAll():List&lt;Person&gt;
+SelectById(int):&lt;Person&gt;
+EditPerson(int, string, string, sting, string):void
+DeletePerson(int):void
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>282</x>
+      <y>186</y>
+      <w>204</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>*Helper*
+Package::FormUI
+{Some Properties}
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+CnnVal(string)
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>282</x>
+      <y>396</y>
+      <w>204</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>*Person*
+Package::FormUI
+{Some Properties}
+--
+public int Id { get; set; }
+public string FirstName { get; set; }
+public string LastName  { get; set; }
+public string EmailAddress { get; set; }
+public string PhoneNumber { get; set; }
+--
+string FullInfo()
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>84</x>
+      <y>48</y>
+      <w>630</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>*Program*
+Package::FormUI
+{Some Properties}
+--
+
+--
+void Main()
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>396</y>
+      <w>210</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>*DataBase*
+Package::SQLServer
+Package::SQLite
+{Some Properties}
+--
+*Table*
+_(People)_
+-id: int
+-FirstName: nvarchar(50)
+-LastName: nvarchar(50)
+-EmailAddress: nvarchar(50)
+-PhoneNumber: nvarchar(20)
+--
+*Stored procedures*
+DeletePostById
+GetById
+GetByLastName
+Insert
+UpdateByID
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>342</y>
+      <w>18</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>168</x>
+      <y>144</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>372</x>
+      <y>144</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>258</x>
+      <y>312</y>
+      <w>264</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>420.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>258</x>
+      <y>348</y>
+      <w>138</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>210.0;80.0;210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

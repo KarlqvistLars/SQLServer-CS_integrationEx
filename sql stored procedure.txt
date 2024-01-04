@@ -1,0 +1,7 @@
+sql stored procedure
+var output = connection.Query<Person>("dbo.People_GetByLastName @LastName", new { LastName = lastName }).ToList();
+
+direct sql (sequel)
+var output = connection.Query<Person>($"select * from People where LastName = '{lastName}'").ToList();
+
+Använd "sql stored procedures" framför "direct sql"
